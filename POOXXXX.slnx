@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="P1CreateClasses/P1CreateClasses.csproj" />
+  <Project Path="P2UpdateClasses/P2UpdateClasses.csproj" />
+  <Project Path="P3ImplementClasses/P3ImplementClasses.csproj" />
+  <Project Path="P4ImplementInterfaces/P4ImplementInterfaces.csproj" />
+</Solution>
