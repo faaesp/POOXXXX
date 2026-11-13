@@ -32,4 +32,42 @@ public class BankAccount
         Balance = balance;
         AccountType = accountType;
     }
+
+    public void Deposit(double amount)
+    {
+        if (amount > 0)
+        {
+            Balance += amount;
+        }
+    }
+
+    public bool Withdraw(double amount)
+    {
+        if (amount > 0 && Balance >= amount)
+        {
+            Balance -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public bool Transfer(BankAccount targetAccount, double amount)
+    {
+        if (Withdraw(amount))
+        {
+            targetAccount.Deposit(amount);
+            return true;
+        }
+        return false;
+    }
+
+    public void ApplyInterest(double years)
+    {
+        Balance += Balance * InterestRate * years;
+    }
+
+    public string DisplayAccountInfo()
+    {
+        return $"Account Number: {AccountNumber}, Type: {AccountType}, Balance: {Balance:C}, Interest Rate: {InterestRate:P}, Customer ID: {CustomerId}";
+    }
 }
